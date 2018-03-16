@@ -1,0 +1,14 @@
+<!doctype html>
+<title>Example</title>
+
+<body>
+<div id="div" class="div">
+</div>
+</body>
+<script>
+    function set_qr_code(path) {
+        grid = document.getElementById("div");
+        img = "<style>body {background: url('"+path+"') no-repeat;background-size: contain;}</style>";
+        grid.innerHTML = img;
+        }
+</script>
