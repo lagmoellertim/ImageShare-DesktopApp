@@ -11,7 +11,7 @@ import os
 
 class Main:
     def __init__(self,image):
-        self.image_queue = GlobalQueue()
+        self.image_queue = GlobalQueue() #Initializing a GlobalQueue for incoming Images
 
         self.upload_path = os.path.abspath(config.upload_path)
         self.token = config.token
@@ -24,16 +24,16 @@ class Main:
 
         self.gui = gui.GUI()
 
-        self.system_tray = system_tray.SystemTray("ImageShare")
+        self.system_tray = system_tray.SystemTray("ImageShare") #Setting up Tray Icon and Menu
         self.system_tray.system_tray.menu = system_tray.Menu(
-            system_tray.MenuItem("Gallery",action=self.start_gallery_task),
+            system_tray.MenuItem("Gallery",action=self.start_gallery_task,default=True),
             system_tray.MenuItem("QR-Code",action=self.start_qr_code_task)
         )
     
         self.system_tray.system_tray.icon = image
 
     def start(self):
-        self.server.start()
+        self.server.start() #Starting all threads and the blocking system_tray
         self.gui.start()
         self.system_tray.run()
 
@@ -48,7 +48,7 @@ class Main:
             self.token))
         self.gui.new_task(self.qr_code_task.task)
 
-width = 50
+width = 50 #Generating Sample icon
 height = 50
 color1 = (0,255,0)
 color2 = (255,0,0)

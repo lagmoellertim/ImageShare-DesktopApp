@@ -2,13 +2,35 @@
 <title>Example</title>
 
 <body>
-<div id="div" class="div">
-</div>
+    <div id='container'></div>
 </body>
+<style>
+body {
+    margin: 0px;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+</style>
 <script>
     function set_qr_code(path) {
-        grid = document.getElementById("div");
-        img = "<style>body {background: url('"+path+"') no-repeat;background-size: contain;}</style>";
+        grid = document.getElementById("container");
+        img = "<img id='qr_code' class='center' src='"+path+"'>";
         grid.innerHTML = img;
+        window.onresize();
+    }
+    window.onresize = function(event){
+        element = document.getElementById("qr_code");
+        additional_space = 0;
+        if(window.innerWidth >= window.innerHeight){
+            element.style.width = "auto";
+            element.style.height = (window.innerHeight-2*additional_space)+"px";
+        } else {
+            element.style.width = (window.innerWidth-2*additional_space)+"px";
+            element.style.height = "auto";
         }
+    }
 </script>

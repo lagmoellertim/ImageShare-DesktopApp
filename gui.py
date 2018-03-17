@@ -6,32 +6,33 @@ class GUI(Thread):
     def __init__(self):
         Thread.__init__(self)
         self.running = False
+        self.stop = False
 
     def run(self):
         sys.excepthook = cef.ExceptHook  # To shutdown all CEF processes on error
-        cef.Initialize()
+        cef.Initialize() #Initialize cef and run UI message loop (blocking)
         self.running = True
-        while True:
+        while not self.stop:
             cef.MessageLoop()
         cef.Shutdown()
     
     @staticmethod
     def new_task(func):
-        cef.PostTask(cef.TID_UI, func)
+        cef.PostTask(cef.TID_UI, func) #Create async task (used to create browsers after starting cef.MessageLoop())
 
     @staticmethod
-    def set_javascript_bindings(browser,binding_name,func):
+    def set_javascript_bindings(browser,binding_name,func): #Used to make Python functions callable from within JavaScript
         bindings = cef.JavascriptBindings(
             bindToFrames=False, bindToPopups=False)
         bindings.SetFunction(binding_name, func)
         browser.SetJavascriptBindings(bindings)
 
     @staticmethod
-    def execute_javascript_func(browser, func_name, *args):
+    def execute_javascript_func(browser, func_name, *args): #Used to call JavaScript function from within Python
         browser.ExecuteFunction(func_name, *args)
 
     @staticmethod
-    def add_browser(instance=None,callback_func_name="",**kwargs):
+    def add_browser(instance=None,callback_func_name="",**kwargs): #Used to create new browser window, with optional onClose callback handler
         browser = cef.CreateBrowserSync(**kwargs)
 
         if instance and callback_func_name:
@@ -40,7 +41,7 @@ class GUI(Thread):
 
         return browser
 
-class LifespanHandler(object):
+class LifespanHandler(object): #Used to detect if browser window will be closed
     def __init__(self, instance,callback_func_name):
         object.__init__(self)
         self.instance = instance
