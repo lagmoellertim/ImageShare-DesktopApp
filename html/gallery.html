@@ -17,7 +17,14 @@
 <script>
     function add_image(path) {
         grid = document.getElementById("grid");
-        img = '<img src="'+path+'" alt="Image" onclick="image_to_clipboard(this.src)">';
+        img = '<img src="'+path+'" alt="Image" onclick="clipboard_handler(this.src)">';
         grid.innerHTML = img + grid.innerHTML;
-        }
+    }
+
+    function clipboard_handler(path){
+      image_to_clipboard(path);
+      $.notify("Copied to clipboard", "success");
+    }
 </script>
+<script src="jquery.min.js"></script>
+<script src="notify.min.js"></script>

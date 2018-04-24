@@ -2,3 +2,7 @@
 *.pyc
 error.log
 *.jpg
+build_tools/dist/
+build_tools/build/
+.vscode/
+uploads/
