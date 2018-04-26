@@ -178,6 +178,7 @@ hiddenimports = [
     "types",
     "urllib",
     "weakref",
+    "cefpython3"
 ]
 if sys.version_info.major == 2:
     hiddenimports += [
@@ -189,7 +190,6 @@ excludedimports = get_excluded_cefpython_modules()
 
 # Include binaries
 binaries = []
-
 # Include datas
 datas = get_cefpython3_datas()
 

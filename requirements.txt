@@ -1,0 +1,8 @@
+pyinstaller
+pillow
+pypng
+cefpython3
+pystray
+flask
+pyqrcode
+imdirect

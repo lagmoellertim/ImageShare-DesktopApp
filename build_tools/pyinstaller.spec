@@ -10,7 +10,6 @@ from PyInstaller.building.api import PYZ, EXE, COLLECT
 from PyInstaller.building.build_main import Analysis
 from PyInstaller.utils.hooks import is_module_satisfies
 from PyInstaller.archive.pyz_crypto import PyiBlockCipher
-
 # Constants
 DEBUG = os.environ.get("CEFPYTHON_PYINSTALLER_DEBUG", False)
 
