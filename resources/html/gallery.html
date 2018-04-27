@@ -21,6 +21,11 @@
         grid.innerHTML = img + grid.innerHTML;
     }
 
+    function clear() {
+        grid = document.getElementById("grid");
+        grid.innerHTML = "";
+    }
+
     function clipboard_handler(path){
       image_to_clipboard(path);
       $.notify("Copied to clipboard", "success");

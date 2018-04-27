@@ -42,7 +42,7 @@ exe = EXE(pyz,
           strip=False,
           upx=False,
           console=DEBUG,
-          icon="../resources/icon.ico")
+          icon="../resources/icon/icon.ico")
 
 COLLECT(exe,
         a.binaries,

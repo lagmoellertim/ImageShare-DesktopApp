@@ -74,7 +74,7 @@ def main():
         sys.exit(1)
     src_dir = getFolder(curdir,level=1)
     shutil.copytree(os.path.join(src_dir,"resources/"),os.path.join(cefapp_dir,"resources/"))
-    shutil.copytree(os.path.join(src_dir,"html/"),os.path.join(cefapp_dir,"html/"))
+    shutil.copytree(os.path.join(src_dir,"config/"),os.path.join(cefapp_dir,"config/"))
     upload_dir = os.path.join(cefapp_dir,"uploads/")
     os.makedirs(upload_dir)
     # Done

@@ -38,7 +38,7 @@ class MainView(MethodView):
             
             token = request.args["key"]
             
-            if token != cls.token_obj:
+            if token != cls.token_obj.obj:
                 return "invalid_session"
 
             filepath = os.path.join(
