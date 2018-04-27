@@ -2,6 +2,11 @@ from build_tools import pyinstaller as pyi
 import os
 
 def getFolder(path):
+    """
+    Removes levels from the path
+    :param path: String which contains a path, e.g. 'C:/'
+    :return:
+    """
     return "/".join(
         path.replace("\\","/").split("/")[:-1]
     )+"/"

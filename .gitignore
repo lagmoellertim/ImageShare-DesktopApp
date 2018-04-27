@@ -5,4 +5,5 @@ error.log
 build_tools/dist/
 build_tools/build/
 .vscode/
+.idea/
 uploads/
