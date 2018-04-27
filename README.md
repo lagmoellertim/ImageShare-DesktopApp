@@ -27,7 +27,7 @@ So naturally, I also published ImageShare under the MIT License at my [public re
 
 ### Installation
 
-If you don't want to develop or test the app and just need the executable file, [follow this link](https://github.com/lagmoellertim/ImageShare-DesktopApp/releases).
+If you don't want to develop or test the app and just need the executable file, [follow this link](https://github.com/lagmoellertim/ImageShare-DesktopApp/releases). If it doesn't work on the first try, check out the troubleshooting guide to hopefully fix your issue.
 
 Otherwise, here is a short guide to setup the required environment to use the ImageShare Desktop-App on Windows.
 The ImageShare Desktop App requires [Python 3.6 64-Bit](https://www.python.org/downloads/release/python-365/) ([Direct download-link](https://www.python.org/ftp/python/3.6.5/python-3.6.5-amd64.exe)). After installing that version of Python, you can go on by typing in the commands below
@@ -52,6 +52,14 @@ To execute the build, type in
 ```
 ImageShare.exe
 ```
+### Troubleshooting
+If you can't get the app running, you may find the following guide helpful.
+
+First of all, make sure you have the Microsoft Visual C++ Redistributable Package (vc_redist) installed on your computer. If this is not the case, you can download it from [here](https://www.microsoft.com/en-us/download/details.aspx?id=48145).
+
+If that didn't fix your problem, you should also allow the port 80 for incoming and outgoing connections in the windows firewall settings.
+
+If you need any further advice or troubleshooting, feel free to open an Issue where you describe what was supposed to happen and what happend as detailed as possible. Also use command line output to make your problem clearer.
 ### Dependencies
 
 ImageShare is using numerous open-source Python dependencies, which are listed below.
