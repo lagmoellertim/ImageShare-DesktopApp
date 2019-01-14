@@ -1,4 +1,4 @@
-# NOT MAINTAINED
+# UNMAINTAINED
 Fork and use at your own risk. I rewrote the whole project to work in-browser as a webapp, which is called Glean. You can check it out here: [glean.cloud](https://glean.cloud)
 ## ImageShare Desktop App
 With ImageShare, you can transfer photos from your mobile device wirelessly to your computer using the ImageShare Desktop App.
